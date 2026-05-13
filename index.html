@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Result Easy Maker</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- jsPDF and autoTable via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header class="header-card">
+      <h1>University Result Generator</h1>
+      <div class="controls">
+        <label class="toggle">
+          <input id="darkModeToggle" type="checkbox">
+          <span>Dark Mode</span>
+        </label>
+      </div>
+    </header>
+
+    <main class="card form-card">
+      <form id="resultForm">
+        <div class="grid">
+          <div class="field">
+            <label>Student Name</label>
+            <input id="studentName" type="text" required>
+          </div>
+          <div class="field">
+            <label>Father's Name</label>
+            <input id="fatherName" type="text" required>
+          </div>
+          <div class="field">
+            <label>Roll Number</label>
+            <input id="rollNumber" type="text" required>
+          </div>
+          <div class="field">
+            <label>College / School Name</label>
+            <input id="collegeName" type="text" required>
+          </div>
+
+          <div class="field">
+            <label>Number of Subjects</label>
+            <input id="numSubjects" type="number" min="1" max="20" value="3" required>
+          </div>
+
+          <div class="field">
+            <label>Student Photo (optional)</label>
+            <input id="photoInput" type="file" accept="image/*">
+          </div>
+        </div>
+
+        <div id="subjectsContainer"></div>
+
+        <div class="actions">
+          <button id="generateBtn" type="button" class="btn primary">Generate Result</button>
+          <button id="downloadPdfBtn" type="button" class="btn" disabled>Download PDF</button>
+          <button id="printBtn" type="button" class="btn" disabled>Print</button>
+        </div>
+      </form>
+    </main>
+
+    <section id="resultCard" class="card result-card hidden">
+      <div class="result-header">
+        <div class="school">University / School</div>
+        <div class="meta">Marksheet Preview</div>
+      </div>
+      <div id="resultPreview"></div>
+    </section>
+
+    <footer class="footer">
+      <small>Designed to look like an official portal. Use the download button to save the marksheet.</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
