@@ -1,0 +1,63 @@
+:root{
+  --bg1: #667eea;
+  --bg2: #764ba2;
+  --card: rgba(255,255,255,0.9);
+  --muted: #6b7280;
+  --accent: #06b6d4;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;
+  background:linear-gradient(135deg,var(--bg1),var(--bg2));
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px;
+}
+.container{width:100%;max-width:1100px}
+.header-card{display:flex;justify-content:space-between;align-items:center;color:white;margin-bottom:18px}
+.header-card h1{margin:0;font-size:1.6rem}
+.card{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 10px 30px rgba(2,6,23,0.2);backdrop-filter: blur(6px)}
+.form-card{margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.field{display:flex;flex-direction:column}
+.field label{font-weight:600;color:var(--muted);margin-bottom:6px}
+input[type=text], input[type=number], input[type=file]{padding:10px;border-radius:8px;border:1px solid rgba(10,10,10,0.08)}
+.actions{display:flex;gap:10px;margin-top:14px}
+.btn{padding:10px 14px;border-radius:8px;border:none;cursor:pointer;background:#f3f4f6}
+.btn.primary{background:linear-gradient(90deg,var(--accent),#7c3aed);color:white}
+.hidden{display:none}
+.result-card{margin-top:12px}
+#resultPreview{padding:10px}
+.result-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.school{font-weight:800}
+.meta{color:var(--muted)}
+.subjects-list{margin-top:12px}
+.subject-row{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+.subject-row input{flex:1}
+.footer{margin-top:18px;text-align:center;color:rgba(255,255,255,0.9)}
+
+/* Result sheet preview styling */
+.marksheet{max-width:780px;margin:0 auto;padding:18px;border:1px solid #e6e6e6;background:white}
+.marksheet h2{text-align:center;margin:4px 0}
+.ms-details{display:flex;justify-content:space-between;margin:12px 0}
+.ms-table{width:100%;border-collapse:collapse}
+.ms-table th, .ms-table td{border:1px solid #ddd;padding:8px;text-align:left}
+.status-pass{color:green;font-weight:700}
+.status-fail{color:#b91c1c;font-weight:700}
+
+/* Dark mode */
+body.dark{background:linear-gradient(135deg,#0f172a,#1f2937)}
+body.dark .card{background:rgba(10,10,12,0.7);color:#e6eef8}
+body.dark input{background:rgba(255,255,255,0.02);color:#e6eef8;border:1px solid rgba(255,255,255,0.06)}
+
+@media (max-width:680px){
+  body{padding:18px}
+  .header-card h1{font-size:1.2rem}
+}
+
+/* simple animations */
+.card{transform:translateY(6px);transition:transform .25s ease, box-shadow .25s ease}
+.card:hover{transform:translateY(0);box-shadow:0 18px 40px rgba(2,6,23,0.3)}
